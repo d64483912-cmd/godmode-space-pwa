@@ -1,0 +1,198 @@
+/* Space-themed background with starry effects */
+.space-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0a0a0a 0%, #1a0d2e 50%, #2d1b69 100%);
+  overflow: hidden;
+}
+
+/* Starry effect layers */
+.stars,
+.stars2,
+.stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+.stars:before,
+.stars2:before,
+.stars3:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: starTwinkle 3s infinite;
+}
+
+.stars:before {
+  box-shadow:
+    10vw 10vh #fff,
+    20vw 20vh #fff,
+    30vw 15vh #fff,
+    40vw 25vh #fff,
+    50vw 35vh #fff,
+    60vw 45vh #fff,
+    70vw 55vh #fff,
+    80vw 65vh #fff,
+    90vw 75vh #fff,
+    15vw 85vh #fff,
+    25vw 75vh #fff,
+    35vw 65vh #fff,
+    45vw 55vh #fff,
+    55vw 45vh #fff,
+    65vw 35vh #fff,
+    75vw 25vh #fff,
+    85vw 15vh #fff;
+  animation-delay: 0s;
+}
+
+.stars2:before {
+  box-shadow:
+    15vw 12vh #fff,
+    25vw 22vh #fff,
+    35vw 17vh #fff,
+    45vw 27vh #fff,
+    55vw 37vh #fff,
+    65vw 47vh #fff,
+    75vw 57vh #fff,
+    85vw 67vh #fff,
+    95vw 77vh #fff,
+    18vw 87vh #fff,
+    28vw 77vh #fff,
+    38vw 67vh #fff,
+    48vw 57vh #fff,
+    58vw 47vh #fff,
+    68vw 37vh #fff,
+    78vw 27vh #fff,
+    88vw 17vh #fff;
+  animation-delay: 1s;
+}
+
+.stars3:before {
+  box-shadow:
+    12vw 8vh #fff,
+    22vw 18vh #fff,
+    32vw 13vh #fff,
+    42vw 23vh #fff,
+    52vw 33vh #fff,
+    62vw 43vh #fff,
+    72vw 53vh #fff,
+    82vw 63vh #fff,
+    92vw 73vh #fff,
+    8vw 83vh #fff,
+    23vw 73vh #fff,
+    33vw 63vh #fff,
+    43vw 53vh #fff,
+    53vw 43vh #fff,
+    63vw 33vh #fff,
+    73vw 23vh #fff,
+    83vw 13vh #fff;
+  animation-delay: 2s;
+}
+
+/* Star twinkle animation */
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Horizon glow effect */
+.horizon-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  background: linear-gradient(
+    to top,
+    rgba(138, 43, 226, 0.3) 0%,
+    rgba(75, 0, 130, 0.2) 30%,
+    rgba(25, 25, 112, 0.1) 60%,
+    transparent 100%
+  );
+  filter: blur(1px);
+}
+
+/* Lightning icon animation */
+.lightning-icon {
+  animation: lightningPulse 2s ease-in-out infinite;
+}
+
+@keyframes lightningPulse {
+  0%, 100% { 
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.3));
+  }
+  50% { 
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 0, 0.6));
+  }
+}
+
+/* Enhanced typography */
+h1, h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .stars:before {
+    box-shadow:
+      5vw 5vh #fff,
+      15vw 10vh #fff,
+      25vw 20vh #fff,
+      35vw 15vh #fff,
+      45vw 25vh #fff,
+      55vw 35vh #fff,
+      65vw 45vh #fff,
+      75vw 55vh #fff,
+      85vw 65vh #fff,
+      10vw 75vh #fff,
+      20vw 85vh #fff;
+  }
+  
+  .stars2:before {
+    box-shadow:
+      8vw 8vh #fff,
+      18vw 18vh #fff,
+      28vw 13vh #fff,
+      38vw 23vh #fff,
+      48vw 33vh #fff,
+      58vw 43vh #fff,
+      68vw 53vh #fff,
+      78vw 63vh #fff,
+      88vw 73vh #fff,
+      13vw 83vh #fff;
+  }
+  
+  .stars3:before {
+    box-shadow:
+      12vw 12vh #fff,
+      22vw 22vh #fff,
+      32vw 17vh #fff,
+      42vw 27vh #fff,
+      52vw 37vh #fff,
+      62vw 47vh #fff,
+      72vw 57vh #fff,
+      82vw 67vh #fff,
+      92vw 77vh #fff,
+      15vw 87vh #fff;
+  }
+}
